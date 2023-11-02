@@ -6,14 +6,13 @@ __lua__
 function global(str)
 local k,v=unpack(split(str,"="))
 k,v=split(k),split(v)
-for i=1,#k do 
+for i=1,#k do
 g=v[i]
 g=g=="true" or g~="false" and g
 _ENV[k[i]]=g
 end
 end
 cartdata"strongsand94191_blimey"
-
 function center_text(text,y,col)
 print(text,64-#text*2,y,col)
 end
@@ -27,16 +26,14 @@ sfx"10"
 end
 function savesettings(manualsave)
 printstr2=""
-
 local vars={f_d,h_f,sp_m,autosave}
 for i=1,4do
-if vars[i]then printstr2..="1" 
+if vars[i]then printstr2..="1"
 else printstr2..="0"
 end
 end
 poke(0x5e00,binarytoint(printstr2..load_binary(12)..load_binary(11)..1))
 end
-
 function inttobinary(num,bits)
 local bin=""
 if bits==nil then bits=16 end
@@ -49,12 +46,12 @@ end
 function binarytoint(t,reverse)
 global "v=0"
 l=#t
-for i=l,1,-1 do 
+for i=l,1,-1 do
 var=i-1
 if reverse==nil then
 var=l-i
 end
-v+=2^(var)*t[i] 
+v+=2^(var)*t[i]
 end
 return v
 end
@@ -339,8 +336,8 @@ if sub_mode==1then
 ?"❎ back  🅾️ toggle",4,120,7
 else
 ?"❎ exit",4,120,7
-if mshortcut~="default menu"then 
-?"🅾️ select",40,120,7 
+if mshortcut~="default menu"then
+?"🅾️ select",40,120,7
 end
 end
 if mshortcut=="default menu"then
@@ -1229,10 +1226,10 @@ function kill_player(obj)
 global"sfx_timer=12"
 sfx"0"
 deaths+=1
-if lvl_id==1 and sp_m and fruit_count!=1 then 
-  global"deaths,rtamin,rtasec,minutes,seconds,frames=0,0,0,0,0,0" 
+if lvl_id==1 and sp_m and fruit_count!=1 then
+  global"deaths,rtamin,rtasec,minutes,seconds,frames=0,0,0,0,0,0"
   tsubtractby=time()
-end 
+end
 destroy_object(obj)
 for dir=0,.875,.125do
 add(dead_particles,{
@@ -1266,7 +1263,7 @@ save_game()
 end
 function load_level(id)
 global "has_dashed,has_key=false"
-if lvl_id==15 then global"max_djump,stopcounting,time_ticking=1,false,true" end --summit level id
+if lvl_id==15 then global"max_djump,stopcounting,time_ticking=1,false,true" end --summit level id --possible
 if fsid==1then
 global"has_key=true"
 end
@@ -1408,13 +1405,15 @@ end
 end
 function _draw()
 pal()
-if lvl_id>15 and state==0 then --summit level id
-pal(11,9)
-elseif state==1then
+
+if state==1then
 draw_menu()
 elseif state==2then
 draw_leaderboard()
-else
+elseif state==0 then
+if lvl_id>15 then --summit level id
+pal(11,9)
+end
 if title_screen~=0then
 if start_game then
 for i=1,15do
@@ -1553,8 +1552,7 @@ end
 end
 function draw_ui()
 rectfill(60-#lvl_title*2,58,66+#lvl_title*2,70,0)
-local title=lvl_title or lvl_id.."00 m"
-center_text(title,62,7)
+center_text(lvl_title,62,7)
 draw_time(4,4)
 end
 function two_digit_str(x)
