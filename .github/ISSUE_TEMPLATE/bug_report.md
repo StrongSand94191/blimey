@@ -2,7 +2,7 @@
 name: Bug report
 about: Create a report to contribute to the project
 title: ''
-labels: ''
+labels: bug
 assignees: StrongSand94191
 
 ---
@@ -23,8 +23,5 @@ A clear and concise description of what you expected to happen.
 **Screenshots**
 If applicable, add screenshots or GIFs to help explain your problem.
 
-**Version:**
- Version number here (ex. Version 0.8-beta)
-
-**Additional context**
-Add any other context about the problem here.
+**Implementation**
+Anything you think could help fix the issue, such as advice, code snippets, or additional details.
