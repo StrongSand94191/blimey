@@ -3,4 +3,5 @@ A Celeste Classic mod with many unnecessary features
 
 Play it online at https://www.lexaloffle.com/bbs/?tid=54017
 
-Access most of the cool features by pressing PAUSE, which is MENU on most controllers and ENTER on keyboard! If you want better documentation or a bugfix feel free to create an issue.
+You can mod or fork this project however you want, although I wouldn't reccomend it as my code is an absolute mess.
+Contributions are welcome, I'm always in need of more available tokens!
