@@ -8,36 +8,33 @@ local k,v=unpack(split(str,"="))
 k,v=split(k),split(v)
 for i=1,#k do 
 g=v[i]
-if g=="true" then
-g=true
-elseif g=="false" then
-g=false
-end
+g=g=="true" or g~="false" and g
 _ENV[k[i]]=g
 end
 end
 cartdata"strongsand94191_blimey"
-objects,hassubmitted={},{true,true,true,true}
-global "lvl_id,alextime,freeze,delay_restart,sfx_timer,ui_timer,draw_x,draw_y,cam_x,cam_y,cam_spdx,cam_spdy,cam_gain,temp,starting,titlecircle,title_screen,sp_m,h_f,f_d,state,minutes,seconds,deaths,fruit_count,stopcounting,menubuffer,settingsbuffer,rtasecadd,rtaminadd,minadd,secadd,level_loader,fsid,loaded,errormessage,max_djump,autosave,save_file=0,0,0,0,0,-99,0,0,0,0,0,0,.25,26,false,0,1,false,false,true,0,0,0,0,0,false,0,0,0,0,0,0,1,0,false,0,1,true,"
+
 function center_text(text,y,col)
 print(text,64-#text*2,y,col)
 end
 function ssprline(x1,y1,x2,y2)
 sspr(x1,y1,1,y2-y1,x1,y1)
 end
-
+function startsettings()
+music"-1"
+global "start_game_flash,start_game=50,true"
+sfx"10"
+end
 function savesettings(manualsave)
-local settings,vars={},{f_d,h_f,sp_m,autosave}
-for i=1,4do
-settings[i]="0"
-if vars[i]then settings[i]="1"end
-end
 printstr2=""
+
+local vars={f_d,h_f,sp_m,autosave}
 for i=1,4do
-printstr2..=settings[i]
+if vars[i]then printstr2..="1" 
+else printstr2..="0"
 end
-printstr2=printstr2..load_binary(12)..load_binary(11)..1
-poke(0x5e00,binarytoint(printstr2))
+end
+poke(0x5e00,binarytoint(printstr2..load_binary(12)..load_binary(11)..1))
 end
 
 function inttobinary(num,bits)
@@ -52,10 +49,12 @@ end
 function binarytoint(t,reverse)
 global "v=0"
 l=#t
+for i=l,1,-1 do 
+var=i-1
 if reverse==nil then
-for i=l,1,-1 do v+=2^(l-i)*t[i] end
-else
-for i=l,1,-1 do v+=2^(i-1)*t[i] end
+var=l-i
+end
+v+=2^(var)*t[i] 
 end
 return v
 end
@@ -119,19 +118,19 @@ function draw_leaderboard()
 if sub_mode~=2then
 cls(3)
 if sub_mode==0then
-print("❎ exit",2,121,7)
+?"❎ exit",2,121,7
 if sel~=1then
-print("🅾️ info",38,121,7)
+?"🅾️ info",38,121,7
 if cansubmit then
 spr(103,73,119)
-print("submit run",85,121,7)
+?"submit run",85,121,7
 end
 elseif cansubmit then
 spr(103,38,119)
-print("submit run",50,121,7)
+?"submit run",50,121,7
 end
 elseif sub_mode==1then
-print("❎ back",2,121,7)
+?"❎ back",2,121,7
 end
 if sel==1then
 if tab~=1then
@@ -221,8 +220,8 @@ cls()
 rectfill(20,50,108,50,7)
 print(tbl[tab],2,115,5)
 print(#_0o.."/14",2,121,5)
-center_text("type the name you want to",10,7)
-center_text("see on the leaderboard",16,7)
+?"type the name you want to",15,10,7
+?"see on the leaderboard",20,16,7
 kinput()
 if _0d then
 submit_run()
@@ -244,8 +243,8 @@ boardmin=sel-10
 elseif sel<boardmin+1and sel~=1then
 boardmin=sel-1
 end
-if btnp(⬅️)then tab-=1sel=1boardmin=1end
-if btnp(➡️)then tab+=1sel=1boardmin=1end
+if btnp(⬅️)then tab-=1 global"sel,boardmin=1,1"end
+if btnp(➡️)then tab+=1 global"sel,boardmin=1,1" end
 if tab<1then tab=#tbl
 elseif tab>#tbl then global"tab=1" end
 if not loaded and hassubmitted[tab]then
@@ -269,69 +268,8 @@ function load_binary(location)
 return tonum(sub(tostr(inttobinary(peek(0x5e00))),location,location))
 end
 
-function load_game(manualload)
-save_array={}
-if manualload then
-fsid,max_djump=load_binary(11),load_binary(12)+1
-
-level_loader=tonum(binarytoint(sub(tostr(inttobinary(dget(2))),11,16)))
-fruit_count=tonum(binarytoint(sub(tostr(inttobinary(dget(2))),5,10)))
-
-rtasecadd=tonum(binarytoint(sub(tostr(inttobinary(dget(3))),5,10)))
-secadd=tonum(binarytoint(sub(tostr(inttobinary(dget(3))),11,16)))
-
-deaths=dget(4)
-rtaminadd=dget(5)
-minadd=dget(5)
-
-else
-save_array=split(save_file,".")
-if#save_array~=13then
-global "errormessage=60" 
-else
-for i in all(save_array)do
-if type(i)=="string"then global"errormessage=60" end 
-end
-if errormessage==0then
-if save_array[11]>#levels or save_array[8]>60or save_array[10]>60then global"errormessage=60" end --causes failure
-vars=split("1,2,3,4,12",",",true)
-for i=1,5do
-local temp=save_array[vars[i]]
-if temp~=0and temp~=1then
-global"errormessage=60"
-end
-end
-if errormessage==0then
-fsid,max_djump,deaths,rtaminadd,rtasecadd,minadd,secadd,level_loader,fruit_count,autosave=save_array[13],save_array[2]+1,save_array[6],save_array[7],save_array[8],save_array[9],save_array[10],save_array[11],save_array[12],save_array[1]
-if save_array[3]==1then global"f_d=true" end
-if save_array[4]==1then global"h_f=true" end
-if save_array[5]==1then global"sp_m=true" end
-end
-end
-end
-end
-if errormessage==0 then
-start_game_flash,start_game,loaded=50,true,true
-music"-1"
-sfx"10"
-end
-end
 
 function save_game(manualsave)
-local settings,vars={},{f_d,h_f,sp_m,autosave}
-for i=1,4do
-settings[i]="0"
-if vars[i]then settings[i]="1"end
-end
-local printstr,vars="",{settings[4],max_djump-1,settings[1],settings[2],settings[3],deaths,flr(rtamin),flr(rtasec),flr(minutes),flr(seconds),lvl_id,fruit_count}
-for i=1,12do
-printstr..=vars[i].."."
-end
-printstr=printstr..fsid
-if manualsave then
-printh(printstr,"@clip")
-psfx"6"
-end
 
 dset(2,binarytoint(tostr(inttobinary(fruit_count,6))..tostr(inttobinary(lvl_id,6))),1)
 dset(3,binarytoint(tostr(inttobinary(flr(rtasec),6))..tostr(inttobinary(flr(seconds),6))),1)
@@ -391,17 +329,19 @@ global "printcolor,selcolor=3,7"
 selx=cx+1
 if sub_mode==1then
 global"selcolor=8"
-if mshortcut=="hair flash"and h_f or moptions[msel]=="fast dash"and f_d or mshortcut=="speedrun mode"and sp_m or mshortcut=="autosave"and autosave then global"selcolor=11" end
+if mshortcut=="hair flash"and h_f or mshortcut=="fast dash"and f_d or mshortcut=="speedrun mode"and sp_m or mshortcut=="autosave"and autosave then global"selcolor=11" end
 end
 rectfill(cx,my+oset-1,cx+#mshortcut*4,my+oset+5,selcolor)
 end
 print(moptions[i],selx,my+oset,printcolor)
 draw_time(4,4)
 if sub_mode==1then
-print("❎ back  🅾️ toggle",4,120,7)
+?"❎ back  🅾️ toggle",4,120,7
 else
-print("❎ exit",4,120,7)
-if mshortcut~="default menu"then print("🅾️ select",40,120,7)end
+?"❎ exit",4,120,7
+if mshortcut~="default menu"then 
+?"🅾️ select",40,120,7 
+end
 end
 if mshortcut=="default menu"then
 mo("press pause to open","the built-in menu")
@@ -447,11 +387,22 @@ poke(24368,1)
 init_settings()
 elseif mshortcut=="save"then
 poke(24368,1)
-save_game(true)
+local settings,vars={},{f_d,h_f,sp_m,autosave}
+for i=1,4do
+settings[i]="0"
+if vars[i]then settings[i]="1"end
+end
+local printstr,vars="",{settings[4],max_djump-1,settings[1],settings[2],settings[3],deaths,flr(rtamin),flr(rtasec),flr(minutes),flr(seconds),lvl_id,fruit_count}
+for i=1,12do
+printstr..=vars[i].."."
+end
+printh(printstr..fsid,"@clip")
+psfx"6"
 elseif mshortcut=="load save"then
 poke(24368,1)
-global "state,menubuffer,title_screen=0,5,2"
-load_game(true)
+global "state,menubuffer,title_screen,start_game_flash,start_game,loaded=0,5,2,50,true,true"
+fsid,max_djump,level_loader,fruit_count,rtasecadd,secadd,deaths,rtaminadd,minadd=load_binary(11),load_binary(12)+1,tonum(binarytoint(sub(tostr(inttobinary(dget(2))),11,16))),tonum(binarytoint(sub(tostr(inttobinary(dget(2))),5,10))),tonum(binarytoint(sub(tostr(inttobinary(dget(3))),5,10))),tonum(binarytoint(sub(tostr(inttobinary(dget(3))),11,16))),dget(4),dget(5),dget(5)
+startsettings()
 end
 elseif btnp(5)then
 global "state,menubuffer=0,5"
@@ -503,7 +454,8 @@ if load_binary(14)==1 then global "sp_m=true" end
 if load_binary(13)==1 then global "autosave=true" end
 
 end
-global "frames,start_game_flash,lvl_id,state=0,0,0,0"
+objects,hassubmitted={},{true,true,true,true}
+global "frames,start_game_flash,lvl_id,state,startmusic,lvl_id,alextime,freeze,delay_restart,sfx_timer,ui_timer,draw_x,draw_y,cam_x,cam_y,cam_spdx,cam_spdy,cam_gain,temp,starting,titlecircle,title_screen,sp_m,h_f,f_d,state,minutes,seconds,deaths,fruit_count,stopcounting,menubuffer,settingsbuffer,rtasecadd,rtaminadd,minadd,secadd,level_loader,fsid,loaded,errormessage,max_djump,autosave,save_file=0,0,0,0,true,0,0,0,0,0,-99,0,0,0,0,0,0,.25,26,false,0,1,false,false,true,0,0,0,0,0,false,0,0,0,0,0,0,1,0,false,0,1,true,"
 music(40,0,7)
 end
 function begin_game()
@@ -691,9 +643,7 @@ if this.delay>0then
 this.spd.y=0
 this.delay-=1
 elseif this.y>this.target then
-this.y=this.target
-this.spd=vector(0,0)
-this.state,this.delay=2,5
+this.state,this.delay,this.y,this.spd=2,5,this.target,vector(0,0)
 this.init_smoke(0,4)
 sfx"5"
 end
@@ -704,7 +654,7 @@ this.spr=6
 if this.delay<0then
 destroy_object(this)
 init_object(player,this.x,this.y)
-if startmusic==nil then
+if startmusic then
 music"0"
 global"startmusic=false"
 end
@@ -715,8 +665,7 @@ draw=player.draw
 }
 spring={
 init=function(this)
-this.hide_in=0
-this.hide_for=0
+this.hide_in,this.hide_for=0,00
 end,
 update=function(this)
 if this.hide_for>0then
@@ -827,10 +776,9 @@ end
 smoke={
 layer=3,
 init=function(this)
-this.spd=vector(.3+rnd"0.2",-.1)
+this.spd,this.flip=vector(.3+rnd"0.2",-.1),vector(rnd()<.5,rnd()<.5)
 this.x+=-1+rnd"2"
 this.y+=-1+rnd"2"
-this.flip=vector(rnd()<.5,rnd()<.5)
 end,
 update=function(this)
 this.spr+=.2
@@ -890,8 +838,8 @@ init_object(lifeup,this.x,this.y)
 destroy_object(this)
 if time_ticking then
 fruit_count+=1
-save_game(false)
 end
+save_game()
 end
 end
 lifeup={
@@ -963,8 +911,7 @@ init=function(this)
 if lvl_id<15then
 this.x-=4
 end
-this.start=this.x
-this.timer=20
+this.start,this.timer=this.x,20
 end,
 update=function(this)
 if has_key then
@@ -980,9 +927,7 @@ platform={
 layer=0,
 init=function(this)
 this.x-=4
-this.hitbox.w=16
-this.dir=this.spr==11and-1or 1
-this.semisolid_obj=true
+this.hitbox.w,this.semisolid_obj,this.dir=16,true,this.spr==11and-1or 1
 end,
 update=function(this)
 this.spd.x=this.dir*.65
@@ -1317,7 +1262,7 @@ function next_level()
 local next_lvl=lvl_id+1
 global"storby_loader,fsid=next_lvl,0"
 load_level(next_lvl)
-save_game(false)
+save_game()
 end
 function load_level(id)
 global "has_dashed,has_key=false"
@@ -1411,13 +1356,35 @@ end
 elseif stat(31)=="コ"then
 save_file=stat(4)
 if save_file~=""then
-load_game(false)
+save_array=split(save_file,".")
+if#save_array~=13then
+global "errormessage=60" 
+else
+for i in all(save_array)do
+if type(i)=="string"then global"errormessage=60" end 
+end
+if errormessage==0then
+if save_array[11]>#levels or save_array[8]>60or save_array[10]>60then global"errormessage=60" end --causes failure
+vars=split("1,2,3,4,12",",",true)
+for i=1,5do
+local temp=save_array[vars[i]]
+if temp~=0and temp~=1then
+global"errormessage=60"
+end
+end
+if errormessage==0then
+fsid,max_djump,deaths,rtaminadd,rtasecadd,minadd,secadd,level_loader,fruit_count,autosave=save_array[13],save_array[2]+1,save_array[6],save_array[7],save_array[8],save_array[9],save_array[10],save_array[11],save_array[12],save_array[1]
+if save_array[3]==1then global"f_d=true" end
+if save_array[4]==1then global"h_f=true" end
+if save_array[5]==1then global"sp_m=true" end
+startsettings()
+end
+end
+end
 end
 elseif btnp(🅾️)or btnp(❎)then
 if title_screen==2 and menubuffer==0 then
-music"-1"
-global "start_game_flash,start_game=50,true"
-sfx"10"
+startsettings()
 end
 end
 end
@@ -1897,4 +1864,3 @@ __music__
 00 41424344
 01 383a3c44
 02 393b3c44
-
