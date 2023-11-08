@@ -24,16 +24,6 @@ music"-1"
 global "start_game_flash,start_game=50,true"
 sfx"10"
 end
-function savesettings(manualsave)
-printstr2=""
-local vars={f_d,h_f,sp_m,autosave}
-for i=1,4do
-if vars[i]then printstr2..="1"
-else printstr2..="0"
-end
-end
-poke(0x5e00,binarytoint(printstr2..load_binary(12)..load_binary(11)..1))
-end
 function inttobinary(num,bits)
 local bin=""
 if bits==nil then bits=16 end
@@ -428,7 +418,14 @@ sp_m=not sp_m
 elseif mshortcut=="autosave"then
 autosave=not autosave
 end
-savesettings()
+printstr2=""
+local vars={f_d,h_f,sp_m,autosave}
+for i=1,4do
+if vars[i]then printstr2..="1"
+else printstr2..="0"
+end
+end
+poke(0x5e00,binarytoint(printstr2..load_binary(12)..load_binary(11)..1))
 end
 end
 function vector(x,y)
