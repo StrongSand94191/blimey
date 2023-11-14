@@ -31,11 +31,11 @@
     <a href="https://github.com/StrongSand94191/Blimey"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://www.lexaloffle.com/bbs/?tid=54017">View Demo</a>
+    <a href="https://www.lexaloffle.com/bbs/?tid=54017">Play</a>
     ·
-    <a href="https://github.com/StrongSand94191/Blimey/issues">Report Bug</a>
+    <a href="[https://github.com/StrongSand94191/Blimey/issues](https://github.com/StrongSand94191/blimey/issues/new?assignees=StrongSand94191&labels=bug&projects=&template=bug_report.md&title=)">Report Bug</a>
     ·
-    <a href="https://github.com/StrongSand94191/Blimey/issues">Request Feature</a>
+    <a href="[https://github.com/StrongSand94191/Blimey/issues](https://github.com/StrongSand94191/blimey/issues/new?assignees=StrongSand94191&labels=enhancement&projects=&template=feature_request.md&title=)">Request Feature</a>
   </p>
 </div>
 
