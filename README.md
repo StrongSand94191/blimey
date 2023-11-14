@@ -31,7 +31,7 @@
     <a href="https://github.com/StrongSand94191/Blimey"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/StrongSand94191/Blimey">View Demo</a>
+    <a href="https://www.lexaloffle.com/bbs/?tid=54017">View Demo</a>
     ·
     <a href="https://github.com/StrongSand94191/Blimey/issues">Report Bug</a>
     ·
