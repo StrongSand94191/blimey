@@ -93,9 +93,8 @@ Use the `BLANK_README.md` to get started.
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Evercore][evercore-github]][evercore-url]
-* [![Everhorn][everhorn-github]][everhorn-url]
-* [![PICO-8][pico8-shield]][pico8-url]
+[![Evercore][evercore-github]][evercore-url]
+[![PICO-8][pico8-shield]][pico8-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -206,16 +205,17 @@ Project Link: [https://github.com/StrongSand94191/blimey](https://github.com/Str
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
+Crumbling block, dash refill, and monument texture: [Celeste Modern by starl1ght](https://www.lexaloffle.com/bbs/?tid=49639)
+Keyboard input function: [Real Keyboard Input by dw817](https://www.lexaloffle.com/bbs/?tid=31598)
+Code for pause menu: [Menu System + Palette Swapping Guide by PixelCod](https://www.lexaloffle.com/bbs/?tid=27725)
+Code minifier I used: [Shrinko8 by thisismypassword](https://www.lexaloffle.com/bbs/?tid=48591)
+Code for circular clipping function: [Lazy Devs’ video](https://www.youtube.com/watch?v=435tL1chJhI)
+Idea for dashless crystal: [@loadandcode](https://www.lexaloffle.com/bbs/?uid=63364)
+Music: [MetaHumanBoi](https://soundcloud.com/metahumanboi)
+Map editor used: [Everhorn](https://github.com/CelesteClassic/everhorn/releases)
+Resources and help: [Celeste Classic Discord](https://discord.gg/9Dm3NCS)
+Secret levels by [@micahc1113](https://www.lexaloffle.com/bbs/?uid=74548)
 
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -234,8 +234,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-shield]: https://img.shields.io/github/license/StrongSand94191/Blimey.svg?style=for-the-badge
 [license-url]: https://github.com/StrongSand94191/Blimey/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
-[everhorn-github]: https://img.shields.io/badge/Everhorn-0f0f0f?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAApElEQVR4Ae2dsQ2CUBRFH5QsQuhZQxsSwgCsYacmWrICtZUOoC5BwQBau8BzAC+E5P9EinNKAved5OXyWgOAeZIYIW4b1+HX4HwEEUQwpqD3JkVs+9YfjE89tKwXz03X/h9EEMFV3mL3XLf184gz9XjXMqfmx4cVI4hgzFtsr1q227NOvr4/3OTz3bnlFiOI4H9aPEFxcdnuoUqC81kxgggCQBhfqHwqM75sOVwAAAAQdEVYdExvZGVQTkcAMjAxMTAyMjHjWbbBAAAAAElFTkSuQmCC
-[everhorn-url]: https://github.com/CelesteClassic/everhorn
-[evercore-github]: https://img.shields.io/badge/Evercore-0f0f0f?logo=github
+[evercore-github]: https://img.shields.io/badge/Evercore-0f0f0f?logo=github&style=for-the-badge
 [evercore-url]: https://github.com/CelesteClassic/evercore
-[pico8-shield]: https://img.shields.io/badge/PICO--8-gray.svg?style=plastic&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAApElEQVR4Ae2dsQ2CUBRFH5QsQuhZQxsSwgCsYacmWrICtZUOoC5BwQBau8BzAC+E5P9EinNKAved5OXyWgOAeZIYIW4b1+HX4HwEEUQwpqD3JkVs+9YfjE89tKwXz03X/h9EEMFV3mL3XLf184gz9XjXMqfmx4cVI4hgzFtsr1q227NOvr4/3OTz3bnlFiOI4H9aPEFxcdnuoUqC81kxgggCQBhfqHwqM75sOVwAAAAQdEVYdExvZGVQTkcAMjAxMTAyMjHjWbbBAAAAAElFTkSuQmCC
+[pico8-shield]: https://img.shields.io/badge/PICO--8-gray.svg?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAApElEQVR4Ae2dsQ2CUBRFH5QsQuhZQxsSwgCsYacmWrICtZUOoC5BwQBau8BzAC+E5P9EinNKAved5OXyWgOAeZIYIW4b1+HX4HwEEUQwpqD3JkVs+9YfjE89tKwXz03X/h9EEMFV3mL3XLf184gz9XjXMqfmx4cVI4hgzFtsr1q227NOvr4/3OTz3bnlFiOI4H9aPEFxcdnuoUqC81kxgggCQBhfqHwqM75sOVwAAAAQdEVYdExvZGVQTkcAMjAxMTAyMjHjWbbBAAAAAElFTkSuQmCC
+[pico8-url]: https://www.lexaloffle.com/pico-8.php
