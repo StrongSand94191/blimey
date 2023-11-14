@@ -20,7 +20,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/StrongSand94191/Blimey">
-    <img src="images/logo.png" alt="Logo" width="104" height="62">
+    <img src="images/logo.png" alt="Logo" width="208" height="124">
   </a>
 
   <h3 align="center">Blimey!</h3>
@@ -165,16 +165,16 @@ Project Link: [https://github.com/StrongSand94191/blimey](https://github.com/Str
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Crumbling block, dash refill, and monument texture: [Celeste Modern by starl1ght](https://www.lexaloffle.com/bbs/?tid=49639)
-Keyboard input function: [Real Keyboard Input by dw817](https://www.lexaloffle.com/bbs/?tid=31598)
-Code for pause menu: [Menu System + Palette Swapping Guide by PixelCod](https://www.lexaloffle.com/bbs/?tid=27725)
-Code minifier I used: [Shrinko8 by thisismypassword](https://www.lexaloffle.com/bbs/?tid=48591)
-Code for circular clipping function: [Lazy Devs’ video](https://www.youtube.com/watch?v=435tL1chJhI)
-Idea for dashless crystal: [@loadandcode](https://www.lexaloffle.com/bbs/?uid=63364)
-Music: [MetaHumanBoi](https://soundcloud.com/metahumanboi)
-Map editor used: [Everhorn](https://github.com/CelesteClassic/everhorn/releases)
-Resources and help: [Celeste Classic Discord](https://discord.gg/9Dm3NCS)
-Secret levels by [@micahc1113](https://www.lexaloffle.com/bbs/?uid=74548)
+Crumbling block, dash refill, and monument texture: [Celeste Modern by starl1ght](https://www.lexaloffle.com/bbs/?tid=49639)<br>
+Keyboard input function: [Real Keyboard Input by dw817](https://www.lexaloffle.com/bbs/?tid=31598)<br>
+Code for pause menu: [Menu System + Palette Swapping Guide by PixelCod](https://www.lexaloffle.com/bbs/?tid=27725)<br>
+Code minifier I used: [Shrinko8 by thisismypassword](https://www.lexaloffle.com/bbs/?tid=48591)<br>
+Code for circular clipping function: [Lazy Devs’ video](https://www.youtube.com/watch?v=435tL1chJhI)<br>
+Idea for dashless crystal: [@loadandcode](https://www.lexaloffle.com/bbs/?uid=63364)<br>
+Music: [MetaHumanBoi](https://soundcloud.com/metahumanboi)<br>
+Map editor used: [Everhorn](https://github.com/CelesteClassic/everhorn/releases)<br>
+Resources and help: [Celeste Classic Discord](https://discord.gg/9Dm3NCS)<br>
+Secret levels by [@micahc1113](https://www.lexaloffle.com/bbs/?uid=74548)<br>
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
