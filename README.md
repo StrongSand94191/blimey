@@ -62,7 +62,6 @@
 </details>
 
 
-
 <!-- ABOUT THE PROJECT -->
 ## About Blimey!
 
@@ -75,18 +74,14 @@ For example:
 * Other random improvements such as nicer-looking infoboxes
 
 Keep in mind this is my first major PICO-8 project, so don't expect my code to be anything other than an unreadable, unoptomized mess.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<br><br>
 
 
 ### Built With
 
 [![Evercore][evercore-github]][evercore-url]
 [![PICO-8][pico8-shield]][pico8-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<br><br>
 
 
 <!-- GETTING STARTED -->
@@ -97,9 +92,7 @@ To play this game, do any one of these things:
 - Use the Splore function in PICO-8 and search for Blimey
 - Type ```load blimey``` into the command line in PICO-8 or PICO-8 Education
 - [Play it on Lexaloffle](https://www.lexaloffle.com/bbs/?tid=54017)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<br><br>
 
 
 <!-- CONTRIBUTING -->
@@ -115,18 +108,14 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<br><br>
 
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the Unlicense License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<br><br>
 
 
 <!-- CONTACT -->
@@ -135,9 +124,7 @@ Distributed under the Unlicense License. See `LICENSE.txt` for more information.
 Email - strongsand94191@gmail.com
 
 Project Link: [https://github.com/StrongSand94191/blimey](https://github.com/StrongSand94191/Blimey)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<br><br>
 
 
 <!-- ACKNOWLEDGMENTS -->
@@ -152,10 +139,10 @@ Idea for dashless crystal: [@loadandcode](https://www.lexaloffle.com/bbs/?uid=63
 Music: [MetaHumanBoi](https://soundcloud.com/metahumanboi)<br>
 Map editor used: [Everhorn](https://github.com/CelesteClassic/everhorn/releases)<br>
 Resources and help: [Celeste Classic Discord](https://discord.gg/9Dm3NCS)<br>
-Secret levels by [@micahc1113](https://www.lexaloffle.com/bbs/?uid=74548)<br>
+Secret levels by [@micahc1113](https://www.lexaloffle.com/bbs/?uid=74548)
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
