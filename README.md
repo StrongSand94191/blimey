@@ -95,7 +95,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 * [![Evercore][evercore-github]][evercore-url]
 * [![Everhorn][everhorn-github]][everhorn-url]
-* [![PICO-8][Vue.js]][Vue-url]
+* [![PICO-8][pico8-shield]][pico8-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
