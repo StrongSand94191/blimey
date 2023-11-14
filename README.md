@@ -68,8 +68,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About Blimey!
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 Blimey! is a mod of Celeste Classic based on Evercore that adds several mildly useful things.
 
 For example:
@@ -203,7 +201,6 @@ Secret levels by [@micahc1113](https://www.lexaloffle.com/bbs/?uid=74548)
 [issues-url]: https://github.com/StrongSand94191/Blimey/issues
 [license-shield]: https://img.shields.io/github/license/StrongSand94191/Blimey.svg?style=for-the-badge
 [license-url]: https://github.com/StrongSand94191/Blimey/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
 [evercore-github]: https://img.shields.io/badge/Evercore-0f0f0f?logo=github&style=for-the-badge
 [evercore-url]: https://github.com/CelesteClassic/evercore
 [pico8-shield]: https://img.shields.io/badge/PICO--8-gray.svg?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAApElEQVR4Ae2dsQ2CUBRFH5QsQuhZQxsSwgCsYacmWrICtZUOoC5BwQBau8BzAC+E5P9EinNKAved5OXyWgOAeZIYIW4b1+HX4HwEEUQwpqD3JkVs+9YfjE89tKwXz03X/h9EEMFV3mL3XLf184gz9XjXMqfmx4cVI4hgzFtsr1q227NOvr4/3OTz3bnlFiOI4H9aPEFxcdnuoUqC81kxgggCQBhfqHwqM75sOVwAAAAQdEVYdExvZGVQTkcAMjAxMTAyMjHjWbbBAAAAAElFTkSuQmCC
