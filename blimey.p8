@@ -58,9 +58,8 @@ end
 end
 function kinput()
 if input~=_ then
-poke(24368,1)
 if _0d then input=_ _0d=_ end
-else _0i=true return end
+end
 poke(24365,1)
 if _0i then repeat k=stat(31)until k==""_0i=_ _0o=""_0s=0end
 k,t=stat(31),_0o
@@ -68,13 +67,14 @@ center_text(t,43,7)
 if k==chr(8)and t>""then
 _0o=sub(t,1,#t-1)
 elseif k==chr(13)then
+poke(24368,1)
 output,_0d,t=_0o,true
 elseif k>=" "and k<="~"and#t<14then
 _0o..=k
 end
 poke(24365,0)
 t=nil
-global "sub_mode,input=2,"
+global"sub_mode,input=2"
 end
 function afterdraw()
 memcpy(0,32768,8192)
@@ -204,12 +204,12 @@ end
 end
 elseif sub_mode==2then
 cls()
+kinput()
 rectfill(20,50,108,50,7)
 print(tbl[tab],2,115,5)
 print(#_0o.."/14",2,121,5)
 ?"type the name you want to",15,10,7
 ?"see on the leaderboard",20,16,7
-kinput()
 if _0d then
 submit_run()
 end
@@ -241,10 +241,10 @@ if btnp(❎)then global"state,menubuffer=0,5" end
 if btnp(🅾️)and sel~=1then global"sub_mode=1" end
 poke(24368,1)
 if btnp()==64and cansubmit then
-_0d=nil
+_0d,_0o=nil,""
 kinput()
+global "input,sub_mode=,2"
 boardmax=9+boardmin
-global "input,sub_mode,_o0=,2,"
 end
 if boardmax>#lbr[tab]then boardmax=#lbr[tab]end
 elseif sub_mode==1then
