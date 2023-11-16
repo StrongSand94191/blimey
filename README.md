@@ -28,8 +28,6 @@
   <p align="center">
     A Celeste mod with many random features
     <br />
-    <a href="https://github.com/StrongSand94191/Blimey"><strong>Explore the docs »</strong></a>
-    <br />
     <br />
     <a href="https://www.lexaloffle.com/bbs/?tid=54017">Play</a>
     ·
