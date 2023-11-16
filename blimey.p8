@@ -46,8 +46,9 @@ end
 return v
 end
 function submit_run()
-add(lbr[tab],{output,flr(rtamin),flr(rtasec),minutes,seconds,deaths,frames})
-hassubmitted[tab],sub_mode=false,0
+add(lbr[tab],{output,flr(rtamin),flr(rurtasec),minutes,seconds,deaths,frames})
+hasntsubmitted[tab]=false
+global"sub_mode,sel=0,1"
 end
 function count_time()
 rtamin,rtasec,alextime=rtaminadd+alextime/60,rtasecadd+alextime%60,time()-tsubtractby
@@ -151,7 +152,7 @@ elseif i==2then global"lcol=6"
 elseif i==3then global"lcol=9" end
 rectfill(2,total,10,total+8,lcol)
 print(i,5,total+2,0)
-print(lbr[tab][i][2]..":"..two_digit_str(lbr[tab][i][3]),15,total+2,0)
+print(lbr[tab][i][2]..":"..two_digit_str(lbr[tab][i][3]),15,total+2,0) --erroneous line
 print(lbr[tab][i][1],35+flr(tonum(lbr[tab][i][2])/10)*2,total+2,0)
 end
 if sub_mode==1then
@@ -234,7 +235,7 @@ if btnp(⬅️)then tab-=1 global"sel,boardmin=1,1"end
 if btnp(➡️)then tab+=1 global"sel,boardmin=1,1" end
 if tab<1then tab=#tbl
 elseif tab>#tbl then global"tab=1" end
-if not loaded and hassubmitted[tab]then
+if not loaded and hasntsubmitted[tab]then
 if tab==1or tab==2and fruit_count==10 or tab==3and max_djump==1then global"cansubmit=true" end --max fruit
 end
 if btnp(❎)then global"state,menubuffer=0,5" end
@@ -246,7 +247,7 @@ kinput()
 global "input,sub_mode=,2"
 boardmax=9+boardmin
 end
-if boardmax>#lbr[tab]then boardmax=#lbr[tab]end
+if boardmin<9then boardmax=count(lbr[tab])end
 elseif sub_mode==1then
 if btnp(❎)then global"sub_mode=0" poke(24365,1)end
 end
@@ -445,7 +446,7 @@ if load_binary(14)==1 then global "sp_m=true" end
 if load_binary(13)==1 then global "autosave=true" end
 
 end
-objects,hassubmitted={},{true,true,true,true}
+objects,hasntsubmitted={},{true,true,true,true}
 global "frames,start_game_flash,lvl_id,state,startmusic,lvl_id,alextime,freeze,delay_restart,sfx_timer,ui_timer,draw_x,draw_y,cam_x,cam_y,cam_spdx,cam_spdy,cam_gain,temp,starting,titlecircle,title_screen,sp_m,h_f,f_d,state,minutes,seconds,deaths,fruit_count,stopcounting,menubuffer,settingsbuffer,rtasecadd,rtaminadd,minadd,secadd,level_loader,fsid,loaded,errormessage,max_djump,autosave,save_file=0,0,0,0,true,0,0,0,0,0,-99,0,0,0,0,0,0,.25,26,false,0,1,false,false,true,0,0,0,0,0,false,0,0,0,0,0,0,1,0,false,0,1,true,"
 music(40,0,7)
 end
