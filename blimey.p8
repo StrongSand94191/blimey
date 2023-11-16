@@ -152,7 +152,7 @@ elseif i==2then global"lcol=6"
 elseif i==3then global"lcol=9" end
 rectfill(2,total,10,total+8,lcol)
 print(i,5,total+2,0)
-print(lbr[tab][i][2]..":"..two_digit_str(lbr[tab][i][3]),15,total+2,0) --erroneous line
+print(lbr[tab][i][2]..":"..two_digit_str(lbr[tab][i][3]),15,total+2,0)
 print(lbr[tab][i][1],35+flr(tonum(lbr[tab][i][2])/10)*2,total+2,0)
 end
 if sub_mode==1then
