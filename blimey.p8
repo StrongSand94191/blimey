@@ -1065,7 +1065,7 @@ else
 spr(28,45,13)
 end
 spr(65,45,sprholder+pls+plch)
-?placeholder..two_digit_str(minutes%60)..":"..two_digit_str(seconds),48,place2+pls+plch,7
+?placeholder..two_digit_str(minutes)..":"..two_digit_str(seconds),48,place2+pls+plch,7
 ?" :"..deaths,48,sprholder+1+pls+plch,7
 camera(draw_x,draw_y)
 end
@@ -1538,11 +1538,11 @@ rectfill(x+lvladd+1,y+1,x+47+lvladd,y+27+yp,0)
 spr(65,6+lvladd,15+yt)
 spr(13,6+lvladd,23+yt)
 if sp_m then
-?"igt: "..two_digit_str(minutes%60)..":"..two_digit_str(seconds),x+4+lvladd,y+3,7
+?"igt: "..two_digit_str(minutes)..":"..two_digit_str(seconds),x+4+lvladd,y+3,7
 ?"rta: "..two_digit_str(flr(rtamin))..":"..two_digit_str(flr(rtasec)),x+4+lvladd,y+12,7
 else
 spr(28,6+lvladd,6)
-?" :"..two_digit_str(minutes%60)..":"..two_digit_str(seconds),x+5+lvladd,y+3,7
+?" :"..two_digit_str(minutes)..":"..two_digit_str(seconds),x+5+lvladd,y+3,7
 end
 end
 function draw_ui()
