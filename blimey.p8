@@ -46,7 +46,7 @@ end
 return v
 end
 function submit_run()
-add(lbr[tab],{output,flr(rtamin),flr(rurtasec),minutes,seconds,deaths,frames})
+add(lbr[tab],{output,flr(rtamin),flr(rtasec),minutes,seconds,deaths,frames})
 hasntsubmitted[tab]=false
 global"sub_mode,sel=0,1"
 end
