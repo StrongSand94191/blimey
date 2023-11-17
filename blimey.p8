@@ -864,7 +864,7 @@ for oy=0,8,8do
 this.init_smoke(ox,oy)
 end
 end
-if lvl_id~=15 then --summit level id
+if lvl_id~=14then --summit level id
 init_fruit(this,4,4)
 else
 destroy_object(this)
@@ -900,7 +900,7 @@ end
 chest={
 check_fruit=true,
 init=function(this)
-if lvl_id<15then
+if lvl_id<14then
 this.x-=4
 end
 this.start,this.timer=this.x,20
@@ -957,7 +957,7 @@ message={
 layer=3,
 init=function(this)
 this.text="-- blimey mountain --#good job getting this far,#but it gets much worse"
-if lvl_id>15then --summit level id
+if lvl_id>14then --summit level id
 this.text="##all levels by @micahc"
 end
 this.hitbox.x+=4
@@ -1258,7 +1258,7 @@ save_game()
 end
 function load_level(id)
 global "has_dashed,has_key=false"
-if lvl_id==15 then global"max_djump,stopcounting,time_ticking=1,false,true" end --summit level id --possible
+if lvl_id==14 then global"max_djump,stopcounting,time_ticking=1,false,true" end --summit level id
 if fsid==1then
 global"has_key=true"
 end
@@ -1406,7 +1406,7 @@ draw_menu()
 elseif state==2then
 draw_leaderboard()
 elseif state==0 then
-if lvl_id>15 then --summit level id
+if lvl_id>14then --summit level id
 pal(11,9)
 end
 if title_screen~=0then
@@ -1468,7 +1468,7 @@ c.x,c.y=-c.w,rnd"120"
 end
 end)
 draw_x,draw_y=round(cam_x)-64,round(cam_y)-64
-if lvl_id==15 then --summit level id
+if lvl_id==14 then --summit level id
 if draw_y<36then global"draw_y=36" end
 global"draw_x=.875"
 end
@@ -1526,7 +1526,7 @@ if sp_m then
 global "yp,yt=10,9"
 end
 global"lvladd=0"
-if lvl_id==6 or lvl_id==8 or lvl_id==12 or lvl_id==18 then
+if lvl_id==6 or lvl_id==8 or lvl_id==11 or lvl_id==18 then
 if state==0 then
 global"lvladd=72"
 end
