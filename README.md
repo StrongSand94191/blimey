@@ -85,7 +85,7 @@ Keep in mind this is my first major PICO-8 project, so don't expect my code to b
 <!-- GETTING STARTED -->
 ## Getting Started
 
-To play this game, do any one of these things:
+You can play this game any of these ways:
 - Download the game from the Releases section and drag it into PICO-8 or PICO-8 Education
 - Use the Splore function in PICO-8 and search for Blimey
 - Type ```load blimey``` into the command line in PICO-8 or PICO-8 Education
