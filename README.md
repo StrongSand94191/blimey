@@ -69,6 +69,7 @@ For example:
 * A pause menu with a settings screen
 * A save system that can work with clipboard saves and local saves
 * Music by [MetaHumanBoi](https://soundcloud.com/metahumanboi)
+* A local leaderboard (in progress)
 * Other random improvements such as nicer-looking infoboxes
 
 Keep in mind this is my first major PICO-8 project, so don't expect my code to be anything other than an unreadable, unoptomized mess.
