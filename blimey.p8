@@ -118,15 +118,16 @@ spr(103,38,119)
 ?"submit run",50,121,7
 end
 elseif sub_mode==1then
+lbrhand=tbl[i]
 ?"❎ back",2,121,7
 end
 if sel==1then
 if tab~=1then
 global "othertotal=2"
 for i=1,4-(4-tab)-1do
-othertotal+=#tbl[i]*4+4
+othertotal+=#lbrhand*4+4
 end
-rectfill(othertotal-1,1,othertotal+#tbl[tab]*4+1,9,0)
+rectfill(othertotal-1,1,othertotal+#lbrhand*4+1,9,0)
 else
 rectfill(1,1,19,9,0)
 end
@@ -135,9 +136,9 @@ global "total=2"
 for i=1,#tbl do
 global "col=6"
 if tab==i then global"col=7" end
-rectfill(total,2,total+#tbl[i]*4,8,col)
-print(tbl[i],total+1,3,0)
-total+=#tbl[i]*4+4
+rectfill(total,2,total+#lbrhand*4,8,col)
+print(lbrhand,total+1,3,0)
+total+=#lbrhand*4+4
 end
 if sel~=1then
 rectfill(1,(sel-boardmin+1)*11-2,111,(sel-boardmin+1)*11-12,0)
