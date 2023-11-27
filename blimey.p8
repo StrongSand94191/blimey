@@ -144,6 +144,7 @@ rectfill(1,(sel-boardmin+1)*11-2,111,(sel-boardmin+1)*11-12,0)
 end
 global"total=0"
 for i=boardmin,boardmax do
+lbrshortcut=lbr[tab][i]
 total+=11
 rectfill(2,total,110,total+8,7)
 global "lcol=7"
@@ -152,8 +153,8 @@ elseif i==2then global"lcol=6"
 elseif i==3then global"lcol=9" end
 rectfill(2,total,10,total+8,lcol)
 print(i,5,total+2,0)
-print(lbr[tab][i][2]..":"..two_digit_str(lbr[tab][i][3]),15,total+2,0) --erroneous line
-print(lbr[tab][i][1],35+flr(tonum(lbr[tab][i][2])/10)*2,total+2,0)
+print(lbrshortcut[2]..":"..two_digit_str(lbrshortcut[3]),15,total+2,0)
+print(lbrshortcut[1],35+flr(tonum(lbrshortcut[2])/10)*2,total+2,0)
 end
 if sub_mode==1then
 if sel>4then rectfill(31,32,96,97,6)end
