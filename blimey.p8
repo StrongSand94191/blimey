@@ -1350,7 +1350,7 @@ for i in all(save_array)do
 if type(i)=="string"then global"errormessage=60"end
 end
 if errormessage==0then
-if save_array[11]>#levels or save_array[8]>60or save_array[10]>60then global"errormessage=60"end
+if save_array[11]>18 or save_array[8]>60or save_array[10]>60then global"errormessage=60"end --max level id
 vars=split("1,2,3,4,12",",",true)
 for i=1,5do
 local temp=save_array[vars[i]]
