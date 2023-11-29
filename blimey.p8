@@ -685,6 +685,10 @@ end
 }
 balloon={
 init=function(this)
+if lvl_id==8and this.y~=16then
+this.x+=4
+this.y-=12
+end
 this.offset,this.start,this.timer,this.hitbox=rnd(),this.y,0,rectangle(-1,-1,10,10)
 end,
 update=function(this)
