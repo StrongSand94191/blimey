@@ -693,10 +693,8 @@ this.offset,this.start,this.timer,this.hitbox=rnd(),this.y,0,rectangle(-1,-1,10,
 end,
 update=function(this)
 if this.spr==22 then
-this.offset+=0.01
-this.y=this.start+sin(this.offset)*2
 local hit=this.player_here()
-if hit and hit.djump<max_djump then
+if hit and hit.djump<max_djump and this.spr==22 then
 psfx"6"
 this.init_smoke()
 hit.djump,this.spr,this.timer=max_djump,0,60
