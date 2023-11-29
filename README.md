@@ -20,7 +20,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/StrongSand94191/Blimey">
-    <img src="images/logo.png" alt="Logo" width="208" height="124">
+    <img src="images/logo.png" alt="Blimey!" width="208" height="124">
   </a>
 
   <h3 align="center">Blimey!</h3>
