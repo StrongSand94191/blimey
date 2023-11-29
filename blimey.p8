@@ -946,9 +946,6 @@ message={
 layer=3,
 init=function(this)
 this.text="-- blimey mountain --#good job getting this far,#but it gets much worse"
-if lvl_id>14then --summit level id
-this.text="##all levels by @micahc"
-end
 this.hitbox.x+=4
 end,
 draw=function(this)
