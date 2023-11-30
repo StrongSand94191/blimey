@@ -442,7 +442,7 @@ if load_binary(14)==1then global"sp_m=true"end
 if load_binary(13)==1then global"autosave=true"end
 end
 objects,hasntsubmitted={},{true,true,true,true}
-global"frames,start_game_flash,lvl_id,state,startmusic,lvl_id,alextime,freeze,delay_restart,sfx_timer,ui_timer,draw_x,draw_y,cam_x,cam_y,cam_spdx,cam_spdy,cam_gain,temp,starting,titlecircle,title_screen,sp_m,h_f,f_d,state,minutes,seconds,deaths,fruit_count,stopcounting,menubuffer,settingsbuffer,rtasecadd,rtaminadd,minadd,secadd,level_loader,fsid,loaded,errormessage,max_djump,autosave,save_file=0,0,0,0,true,0,0,0,0,0,-99,0,0,0,0,0,0,.25,26,false,0,1,false,false,true,0,0,0,0,0,false,0,0,0,0,0,0,1,0,false,0,1,true,"
+global"frames,start_game_flash,lvl_id,state,startmusic,alextime,freeze,delay_restart,sfx_timer,ui_timer,draw_x,draw_y,cam_x,cam_y,cam_spdx,cam_spdy,cam_gain,temp,starting,titlecircle,title_screen,sp_m,h_f,f_d,state,minutes,seconds,deaths,fruit_count,stopcounting,menubuffer,settingsbuffer,rtasecadd,rtaminadd,minadd,secadd,level_loader,fsid,loaded,errormessage,max_djump,autosave,save_file=0,0,0,0,true,0,false,0,0,-99,0,0,0,0,0,0,.25,26,false,0,1,false,false,true,0,0,0,0,0,false,0,0,0,0,0,0,1,0,false,0,1,true,"
 music(40,0,7)
 end
 function begin_game()
@@ -561,7 +561,7 @@ h_input*(v_input~=0and d_half or d_full)or
 ,v_input~=0and v_input*(h_input~=0and d_half or d_full)or 0)
 psfx"3"
 if not f_d then
-global"freeze=1"
+global"freeze=true"
 end
 this.dash_target_x,this.dash_target_y,this.dash_accel_x,this.dash_accel_y=2*sign(this.spd.x),(this.spd.y>=0and 2or 1.5)*sign(this.spd.y),this.spd.y==0and 1.5or 1.06066,this.spd.x==0and 1.5or 1.06066
 elseif this.djump<=0and dash then
@@ -1290,9 +1290,8 @@ if menubuffer>0then
 menubuffer-=1
 end
 frames+=1
-if freeze>0then
-freeze-=1
-global"time_ticking=false"
+if freeze then
+global"time_ticking,freeze=false,false"
 return
 end
 if time_ticking then
