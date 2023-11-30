@@ -511,7 +511,6 @@ elseif this.grace>0then
 this.grace-=1
 end
 this.dash_effect_time-=1
-if this.dash_time==0and hasdashed then candestroy=true end
 if this.dash_time>0then
 this.init_smoke()
 this.dash_time-=1
@@ -1293,7 +1292,7 @@ end
 frames+=1
 if freeze>0then
 freeze-=1
-time_ticking=false
+global"time_ticking=false"
 return
 end
 if time_ticking then
