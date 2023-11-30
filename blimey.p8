@@ -696,7 +696,7 @@ local hit=this.player_here()
 if hit and hit.djump<max_djump and this.spr==22 then
 psfx"6"
 this.init_smoke()
-hit.djump,this.spr,this.timer=max_djump,0,60
+hit.djump,this.spr,this.timer=max_djump,21,60
 end
 elseif this.timer>0 then
 this.timer-=1
@@ -707,9 +707,7 @@ this.spr=22
 end
 end,
 draw=function(this)
-if this.spr==22 then
 draw_obj_sprite(this)
-end
 end
 }
 
