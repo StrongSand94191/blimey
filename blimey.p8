@@ -453,9 +453,6 @@ load_level(level_loader)
 tsubtractby=time()
 global"title_screen=0"
 end
-function is_title()
-return lvl_id==0
-end
 clouds={}
 for i=0,16do
 add(clouds,{
@@ -575,7 +572,10 @@ btn(⬇️)and 6or
 btn(⬆️)and 7or
 this.spd.x~=0and h_input~=0and 1+this.spr_off%4or 1
 if this.y<-4and levels[lvl_id+1]then
-next_level()
+local next_lvl=lvl_id+1
+global"storby_loader,fsid=next_lvl,0"
+load_level(next_lvl)
+save_game()
 end
 this.was_on_ground=on_ground
 end,
@@ -584,8 +584,18 @@ local clamped=mid(this.x,-1,lvl_pw-7)
 if this.x~=clamped then
 this.x,this.spd.x=clamped,0
 end
-set_hair_color(this.djump)
-draw_hair(this)
+global"flashy=14"
+if h_f then
+flashy=7+frames\3%2*4
+end
+pal(8,this.djump==1and 8or this.djump==2and flashy or 12)
+local last=vector(this.x+(this.flip.x and 6or 2),this.y+(btn(⬇️)and 4or 3))
+for i,h in ipairs(this.hair)do
+h.x+=(last.x-h.x)/1.5
+h.y+=(last.y+.5-h.y)/1.5
+circfill(h.x,h.y,mid(4-i,1,2),8)
+last=h
+end
 draw_obj_sprite(this)
 pal()
 end
@@ -594,22 +604,6 @@ function create_hair(obj)
 obj.hair={}
 for i=1,5do
 add(obj.hair,vector(obj.x,obj.y))
-end
-end
-function set_hair_color(djump)
-global"flashy=14"
-if h_f then
-flashy=7+frames\3%2*4
-end
-pal(8,djump==1and 8or djump==2and flashy or 12)
-end
-function draw_hair(obj)
-local last=vector(obj.x+(obj.flip.x and 6or 2),obj.y+(btn(⬇️)and 4or 3))
-for i,h in ipairs(obj.hair)do
-h.x+=(last.x-h.x)/1.5
-h.y+=(last.y+.5-h.y)/1.5
-circfill(h.x,h.y,mid(4-i,1,2),8)
-last=h
 end
 end
 player_spawn={
@@ -1227,12 +1221,6 @@ clamped=mid(cam_y,64,lvl_ph-64)
 if cam_y~=clamped then
 cam_spdy,cam_y=0,clamped
 end
-end
-function next_level()
-local next_lvl=lvl_id+1
-global"storby_loader,fsid=next_lvl,0"
-load_level(next_lvl)
-save_game()
 end
 function load_level(id)
 global"has_dashed,has_key=false"
