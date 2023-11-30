@@ -708,9 +708,6 @@ end
 end,
 draw=function(this)
 if this.spr==22 then
-for i=7,13 do
-pset(this.x+4+sin(this.offset*2+i/10),this.y+i,6)
-end
 draw_obj_sprite(this)
 end
 end
