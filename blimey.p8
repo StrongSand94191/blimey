@@ -116,7 +116,7 @@ spr(103,38,119)
 ?"submit run",50,121,7
 end
 elseif sub_mode==1then
-lbrhand=#tbl[i]
+lbrhand=tbl[i]
 ?"❎ back",2,121,7
 end
 if sel==1then
@@ -1066,7 +1066,6 @@ foreach(split([[1,player_spawn
 20,chest
 22,balloon
 23,fall_floor
-26,balloon
 13,fruit
 45,fly_fruit
 60,statue
