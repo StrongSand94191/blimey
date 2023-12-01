@@ -1289,7 +1289,6 @@ if delay_restart>0then
 global"cam_spdx,cam_spdy=0,0"
 delay_restart-=1
 if delay_restart==0then
-storbyloader=lvl_id
 load_level(lvl_id)
 end
 end
