@@ -277,7 +277,7 @@ if btnp(3)then msel+=1cx=mx end
 if btnp(4)and moptions[msel]~="default menu"then cx=mx end
 if btnp()==64then cx=mx end
 if msel>mamt then global"msel=1"end
-if msel<=0then msel=mamt end
+if msel<1then msel=mamt end
 mshortcut=moptions[msel]
 cx=lerp(cx,mx+5,.5)
 end
@@ -682,7 +682,7 @@ if lvl_id==8and this.y~=16then
 this.x+=4
 this.y-=12
 end
-this.offset,this.start,this.timer,this.hitbox=rnd(),this.y,0,rectangle(-1,-1,10,10)
+this.start,this.timer,this.hitbox=this.y,0,rectangle(-1,-1,10,10)
 end,
 update=function(this)
 if this.spr==22 then
@@ -1011,7 +1011,7 @@ spr(118+frames/5%3,this.x,this.y)
 if this.show then
 global"stopcounting,pls=true,1"
 if sp_m then
-global"pls=0 "
+global"pls=0"
 end
 camera()
 global"plch,rectnum,placeholder,sprholder,place2=0,31, :,21,13"
