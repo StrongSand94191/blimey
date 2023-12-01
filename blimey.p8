@@ -572,9 +572,8 @@ btn(⬇️)and 6or
 btn(⬆️)and 7or
 this.spd.x~=0and h_input~=0and 1+this.spr_off%4or 1
 if this.y<-4and levels[lvl_id+1]then
-local next_lvl=lvl_id+1
-global"storby_loader,fsid=next_lvl,0"
-load_level(next_lvl)
+global"fsid=0"
+load_level(lvl_id+1)
 save_game()
 end
 this.was_on_ground=on_ground
